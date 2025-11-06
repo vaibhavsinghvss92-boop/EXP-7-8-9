@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Web Application Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f6fa;
+      padding: 20px;
+    }
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      margin-bottom: 25px;
+      width: 350px;
+    }
+    input, select {
+      padding: 6px;
+      margin-top: 6px;
+      width: 90%;
+    }
+    h2 {
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌐 Web Application Portal</h1>
+
+  <!-- LOGIN FORM -->
+  <form action="MainServlet" method="post">
+    <h2>Login</h2>
+    <input type="hidden" name="action" value="login">
+    Username: <input type="text" name="username" required><br>
+    Password: <input type="password" name="password" required><br>
+    <input type="submit" value="Login">
+  </form>
+
+  <!-- EMPLOYEE SECTION -->
+  <form action="MainServlet" method="get">
+    <h2>View/Search Employees</h2>
+    <input type="hidden" name="action" value="employee">
+    Employee ID (optional): <input type="text" name="empid"><br>
+    <input type="submit" value="Search / View All">
+  </form>
+
+  <!-- ATTENDANCE SECTION -->
+  <form action="MainServlet" method="post">
+    <h2>Student Attendance</h2>
+    <input type="hidden" name="action" value="attendance">
+    Student ID: <input type="text" name="studentId" required><br>
+    Date: <input type="date" name="date" required><br>
+    Status:
+    <select name="status">
+      <option value="Present">Present</option>
+      <option value="Absent">Absent</option>
+    </select><br>
+    <input type="submit" value="Submit Attendance">
+  </form>
+</body>
+</html>
